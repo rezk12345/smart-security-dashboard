@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Security Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="topbar card">
+        <h1>Smart Security Dashboard</h1>
+        <div>
+          <span>Welcome, {{ username }}</span>
+          <a class="button secondary" href="{{ url_for('logout') }}">Logout</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <form method="post">
+          <button type="submit">Run Fresh Analysis</button>
+        </form>
+      </div>
+
+      {% if has_report %}
+      <div class="grid">
+        <div class="card">
+          <h3>URL Monitoring</h3>
+          <p>Total URLs: {{ report.url_monitoring.total_urls }}</p>
+          <p>High Risk: {{ report.url_monitoring.high_risk_count }}</p>
+          <p>Suspicious: {{ report.url_monitoring.suspicious_count }}</p>
+        </div>
+        <div class="card">
+          <h3>Email Monitoring</h3>
+          <p>Total Emails: {{ report.email_monitoring.total_emails }}</p>
+          <p>Phishing Likely: {{ report.email_monitoring.phishing_likely_count }}</p>
+          <p>Needs Review: {{ report.email_monitoring.needs_review_count }}</p>
+        </div>
+        <div class="card">
+          <h3>Breach Tracking</h3>
+          <p>Total Breaches: {{ report.breach_tracking.total_breaches }}</p>
+          <p>Records Exposed: {{ report.breach_tracking.total_records_exposed }}</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>URL Trend</h3>
+          <img src="{{ url_for('chart_file', filename='threat_trend.png') }}" alt="URL threat trend chart" />
+        </div>
+        <div class="card">
+          <h3>Phishing Trend</h3>
+          <img src="{{ url_for('chart_file', filename='phishing_trend.png') }}" alt="Phishing trend chart" />
+        </div>
+      </div>
+      {% else %}
+      <div class="card">
+        <p>No report found yet. Click "Run Fresh Analysis" to generate one.</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>

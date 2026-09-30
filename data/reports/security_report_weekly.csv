@@ -1,0 +1,9 @@
+metric,value
+total_urls,5
+high_risk_urls,2
+suspicious_urls,1
+total_emails,5
+phishing_likely_emails,2
+needs_review_emails,1
+total_breaches,3
+total_records_exposed,1454500

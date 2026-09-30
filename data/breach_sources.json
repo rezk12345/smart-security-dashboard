@@ -1,0 +1,19 @@
+{
+  "breaches": [
+    {
+      "company": "Acme Cloud",
+      "breach_date": "2026-03-10",
+      "records_exposed": 9500
+    },
+    {
+      "company": "RetailNova",
+      "breach_date": "2026-03-23",
+      "records_exposed": 245000
+    },
+    {
+      "company": "GlobalFinanceX",
+      "breach_date": "2026-04-01",
+      "records_exposed": 1200000
+    }
+  ]
+}

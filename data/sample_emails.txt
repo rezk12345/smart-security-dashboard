@@ -1,0 +1,5 @@
+Dear Customer, urgent action required!!! Click here to verify your account now: http://bit.ly/security-check
+Hi team, please review the sprint backlog before tomorrow's standup.
+Dear User, your password reset is pending. Limited time to avoid account suspension!
+Your invoice is attached. Let me know if you need any updates.
+Wire transfer needed immediately. Click here to confirm payment details.
